@@ -1,3 +1,6 @@
+// Helper to get the correct asset path for both dev and production
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 export const COLORS = {
   brown: '#4a2c2a',      // Rich Milk Chocolate
   darkBrown: '#2b1d1a',  // Dark Chocolate
@@ -15,8 +18,8 @@ export const FLAVORS = [
     description: 'Signature Oat Milk Chocolate Bars',
     color: '#f9f5e8',
     textColor: '#4a2c2a',
-    image: '/london_fog-removebg-preview.png',
-    bgImage: '/mathca-removebg-preview.png',
+    image: getAssetPath('london_fog-removebg-preview.png'),
+    bgImage: getAssetPath('mathca-removebg-preview.png'),
     accent: '#d98e46'
   },
   {
@@ -25,8 +28,8 @@ export const FLAVORS = [
     description: 'Silky Smooth, Plant-Based Delight',
     color: '#d98e46',
     textColor: '#2b1d1a',
-    image: '/coconut-butter.png',
-    bgImage: '/coconut-butter.png',
+    image: getAssetPath('coconut-butter.png'),
+    bgImage: getAssetPath('coconut-butter.png'),
     accent: '#f9f5e8'
   },
   {
@@ -35,8 +38,8 @@ export const FLAVORS = [
     description: 'Curated Collections for Chocolate Lovers',
     color: '#2b1d1a',
     textColor: '#f9f5e8',
-    image: '/gift-box.webp',
-    bgImage: '/gift-box.webp',
+    image: getAssetPath('gift-box.webp'),
+    bgImage: getAssetPath('gift-box.webp'),
     accent: '#d98e46'
   }
 ];
@@ -50,14 +53,14 @@ export const PRODUCTS_DATA: Record<string, { title: string; description: string;
         id: 'bc1',
         name: 'London Fog Bar',
         price: '$8.50',
-        image: '/london_fog-removebg-preview.png',
+        image: getAssetPath('london_fog-removebg-preview.png'),
         desc: 'Blonde Oatmilk Chocolate Infused with Earl Grey Tea.'
       },
       {
         id: 'bc2',
         name: 'Matcha Bar',
         price: '$8.50',
-        image: '/mathca-removebg-preview.png',
+        image: getAssetPath('mathca-removebg-preview.png'),
         desc: 'Blonde Oatmilk Chocolate Infused with Matcha Green Tea.'
       }
     ]
@@ -70,7 +73,7 @@ export const PRODUCTS_DATA: Record<string, { title: string; description: string;
         id: 'cb1',
         name: 'Artisan Coconut Butter',
         price: '$14.00',
-        image: '/coconut-butter.png',
+        image: getAssetPath('coconut-butter.png'),
         desc: 'Creamy coconut butter with chocolate swirl.'
       }
     ]
@@ -83,7 +86,7 @@ export const PRODUCTS_DATA: Record<string, { title: string; description: string;
         id: 'gb1',
         name: 'ShawZ Assorted Box',
         price: '$45.00',
-        image: '/gift-box.webp',
+        image: getAssetPath('gift-box.webp'),
         desc: 'Curated selection of our finest chocolate bars.'
       }
     ]
